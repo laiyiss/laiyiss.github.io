@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<embed src="ghydn.mp3" hidden="true" autostart="true" loop="true">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				
+				<span class="space">冀宝宝</span><br />
+				<span class="space">自从遇到了你，时间总是过得飞快；</span><br />
+				<span class="space">一直以来的愉快的交流被我的过失打破了这宁静的日子；</span><br />
+				<span class="space">由于我令人堪忧的情商，做出了很多错误的决定；</span><br />
+				<span class="space">让你失望了，对不起~</span><br />
+				<span class="space">事情我懂了，我知道你在意的其实就是我的一句祝福；</span><br />
+				<span class="space">在意的其实也就是我把你说过的话放在心上了，认真的去听了；</span><br />
+				<span class="space">在意的也就是平时的处事方式及对平时小事的细心；</span><br />
+				<span class="space">更多的去关注一下你说的话，多听一下你的意见，而不是自己乱做一些主张；</span><br />
+				<span class="space">更不是所谓的自己臆想的一些想法及问题；</span><br />
+				<span class="space">短短几天，突然没有了你的消息，总感觉做什么都一副无精打采呀；</span><br />
+				<span class="space">你说的对，我有时做事确实是欠考虑了，总认为自己的所作是好的，但没想到却是给你造成了困扰；</span><br />
+				<span class="space">我也为那晚发的消息道歉，其实那晚我在去的路上时心态有点崩了，有点话不择口了；</span><br />
+				<span class="space">以后我会多多注意的说话方式的，短短几天的却是也学到了不少了，也懂得了不少；</span><br />
+				<span class="space">确实都怪我情商太低了，让你觉得心累；</span><br />
+				<span class="space">我最近真的在努力的学习，包括向已婚人士求教经验，网上搜索等等；</span><br />
+				<span class="space">但是好像我找的东西在你这里出现了偏差呀；</span><br />
+				<span class="space">歉就不在道了，道多了就显得无味了；</span><br />
+				<span class="space">只能让自己不再同一个地方再跌倒吧；</span><br />
+				<span class="space">我知道直男很让你们烦心，我会努力去学着改变的；</span><br />
+				<span class="space">还望以后你能多多的指点，不吝赐教~</span><br />
+				<span class="space">我知道遇见你不容易,失去了会很可惜,我不想余生都是回忆,我希望余生都是你</span><br />
+				<!-- <span class="space">希望我们相识的时间一直走下去~</span><br /> -->
+				
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						冀宝宝, 不知不觉间我们已经相识了:
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						希望余生的日子里都是你.<br/>
+						<div class="signature">--- 邢</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019,02,03);
+		together.setHours(19);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
